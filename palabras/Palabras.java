@@ -21,6 +21,7 @@ public class Palabras{
         int posicionF;
         posicionF = 0;
 
+
         //Creamos la arrayList principal
         ArrayList<String> partes = new ArrayList<>();
 
@@ -35,8 +36,20 @@ public class Palabras{
         //Dependiendo de si está o no el argumento "-f", se realizará una acción diferente:
         if(fEsta){
             //Encontrar y leer el fichero; guardar en un arrayList las palabras;
-            nombreFichero = args[++posicionF];
-            partes = FuncTratamientoFicheros.leerFicheroCompleto(nombreFichero);
+            if(args[++posicionF] != null){
+                nombreFichero = args[++posicionF];
+                partes = FuncTratamientoFicheros.leerFicheroCompleto(nombreFichero);
+            } else {
+                
+            }
+
+            for(String p: partes){
+                if(p.equals("\n")){
+                    System.out.print(p);
+                }else{
+                    System.out.print(p + " ");
+                }
+            }
         } else {
             //Mensaje de error
             System.out.println("No es posible realizar acciones debido a que no se ha introducido");

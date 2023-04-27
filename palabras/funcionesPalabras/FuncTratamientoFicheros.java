@@ -34,10 +34,12 @@ public class FuncTratamientoFicheros {
                 String[]palabras = linea.split(" ");
                 for(String p: palabras){
                     partes.add(p);
+                    
                 }
                 partes.add("\n");
                 linea = br.readLine();
             }
+
             br.close();
 
         } catch (FileNotFoundException e) {
@@ -46,6 +48,7 @@ public class FuncTratamientoFicheros {
             System.out.println("Error: " + e.getMessage());
         }
         return partes;
+        
     }
 
 }

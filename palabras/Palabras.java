@@ -59,6 +59,8 @@ public class Palabras{
                 partes = FuncTratamientoFicheros.leerFicheroCompleto(nombreFichero);
                 ficheroCompletoGuardado = FuncTratamientoFicheros.guardarFichero(partes);
                 ficheroBackUp = ficheroCompletoGuardado;
+                System.out.println("El archivo seleccionado es el siguiente: ");
+                System.out.println(ficheroCompletoGuardado + "\n");
             } else {
                 
             }

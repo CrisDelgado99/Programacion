@@ -51,4 +51,18 @@ public class FuncTratamientoFicheros {
         
     }
 
+    public static String guardarFichero(ArrayList<String> partes){
+        String ficheroGuardado = "";
+
+        for(String p: partes){
+            if(p.equals("\n")){
+                ficheroGuardado = ficheroGuardado + p;
+            }else{
+                ficheroGuardado = ficheroGuardado + p + " ";
+            }
+        }
+
+        return ficheroGuardado;
+    }
+
 }

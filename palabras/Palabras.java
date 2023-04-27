@@ -15,11 +15,29 @@ public class Palabras{
         String nombreFichero;
         nombreFichero = "";
 
+        String palabra;
+        palabra = "";
+
+        String ficheroCompletoGuardado;
+        ficheroCompletoGuardado = "";
+
+        String ficheroBackUp;
+        ficheroBackUp = "";
+
         boolean fEsta;
         fEsta = false;
 
         int posicionF;
         posicionF = 0;
+
+        int posicion;
+        posicion = -1;
+
+        int lineaPosicion;
+        lineaPosicion = -1;
+
+        int contador;
+        contador = 0;
 
 
         //Creamos la arrayList principal
@@ -37,19 +55,15 @@ public class Palabras{
         if(fEsta){
             //Encontrar y leer el fichero; guardar en un arrayList las palabras;
             if(args[++posicionF] != null){
-                nombreFichero = args[++posicionF];
+                nombreFichero = args[posicionF++];
                 partes = FuncTratamientoFicheros.leerFicheroCompleto(nombreFichero);
+                ficheroCompletoGuardado = FuncTratamientoFicheros.guardarFichero(partes);
+                ficheroBackUp = ficheroCompletoGuardado;
             } else {
                 
             }
 
-            for(String p: partes){
-                if(p.equals("\n")){
-                    System.out.print(p);
-                }else{
-                    System.out.print(p + " ");
-                }
-            }
+            
         } else {
             //Mensaje de error
             System.out.println("No es posible realizar acciones debido a que no se ha introducido");
@@ -61,14 +75,31 @@ public class Palabras{
                 //ARGS DE BÚSQUEDA DE 1 PALABRA: -----------------------------------------------------------------------
                 //Buscar en el archivo la palabra que se encuentra junto a -c y contar su número de apariciones
                 case "-c":
+                    palabra = args[++i];
+                    contador = FuncionesBusqueda.contadorPalabra(partes, palabra);
+                    FuncionesBusqueda.imprimirApariciones(contador, palabra);
                     break;
                 //Buscar en el archivo la palabra que aparece junto -p, contar cuántas veces está y
-                //decir la posición de la primera aparición de la palabra (ej: Maizena: 20 veces, posición 3)
+                //decir la posición de la primera aparición de la palabra 
                 case "-p":
+                    palabra = args[i + 1];
+                    posicion = FuncionesBusqueda.posicionPalabra(palabra, partes);
+                    if(posicion > 0){
+                        System.out.println("La palabra " + palabra + " aparece por primera vez en la posición " + posicion + ".");    
+                    } else {
+                        System.out.println("La palabra " + palabra + " no se encuentra en el fichero.");
+                    }
                     break;
                 //Buscar en el archivo la palabra que aparece junto -L, contar cuántas veces está y
-                //decir la línea de la primera aparición de la palabra (ej: Maizena: 20 veces, línea 1)
+                //decir la línea de la primera aparición de la palabra 
                 case "-l":
+                    palabra = args[i + 1];
+                    lineaPosicion = FuncionesBusqueda.lineaPalabra(palabra, partes);
+                    if(lineaPosicion >= 0){
+                        System.out.println("La palabra " + palabra + " aparece por primera vez en la línea " + lineaPosicion + ".");    
+                    } else {
+                        System.out.println("La palabra " + palabra + " no se encuentra en el fichero.");
+                    }
                     break;
 
                 //ARGS QUE REALIZAN ACCIONES CON TODAS LAS PALABRAS: --------------------------------------------------

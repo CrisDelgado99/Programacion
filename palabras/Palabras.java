@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import funcionesPalabras.FuncionesBusqueda;
 import funcionesPalabras.OtrasFunciones;
 import funcionesPalabras.FuncTratamientoFicheros;
+import clasePalabras.PalabraText;
 
 
 /* Palabras.java
@@ -43,7 +44,9 @@ public class Palabras{
 
         //Creamos la arrayList principal y la arraylist para contener los indices en los que están los \n
         ArrayList<String> partes = new ArrayList<>();
+        ArrayList<String> palabrasNoRep = new ArrayList<>();
         ArrayList<Integer> indiceN = new ArrayList<>(); 
+        ArrayList<PalabraText> palabraArr = new ArrayList<>();
 
         //Buscamos primero el nombre del fichero, para que el programa sepa sobre qué fichero ha de actuar 
         for(int i = 0; i < args.length; i++){
@@ -56,19 +59,19 @@ public class Palabras{
         //Dependiendo de si está o no el argumento "-f", se realizará una acción diferente:
         if(fEsta){
             //Encontrar y leer el fichero; guardar en un arrayList las palabras;
-            if(args[++posicionF] != null){
-                nombreFichero = args[posicionF++];
-                partes = FuncTratamientoFicheros.leerFicheroCompleto(nombreFichero);
-                indiceN = OtrasFunciones.buscarIndiceN(partes);
-                ficheroCompletoGuardado = FuncTratamientoFicheros.guardarFichero(partes);
-                ficheroBackUp = ficheroCompletoGuardado;
-                System.out.println("El archivo seleccionado es el siguiente: \n");
-                System.out.println(ficheroCompletoGuardado + "\n");
-            } else {
-                
-            }
+            nombreFichero = args[++posicionF];
+            partes = FuncTratamientoFicheros.leerFicheroCompleto(nombreFichero);
+            palabrasNoRep = OtrasFunciones.buscarNoRepetidas(partes);
+            palabraArr = OtrasFunciones.crearArrayPalabraText(palabrasNoRep, partes);
+            indiceN = OtrasFunciones.buscarIndiceN(partes);
+            //Guardar el contenido del fichero en dos variables distintas
+            ficheroCompletoGuardado = FuncTratamientoFicheros.guardarFichero(partes);
+            ficheroBackUp = ficheroCompletoGuardado;
+            //Mostrar al usuario el fichero seleccionado
+            System.out.println("El archivo seleccionado es el siguiente: \n");
+            System.out.println(ficheroCompletoGuardado + "\n");
 
-            
+        
         } else {
             //Mensaje de error
             System.out.println("No es posible realizar acciones debido a que no se ha introducido");
@@ -110,6 +113,7 @@ public class Palabras{
                 //ARGS QUE REALIZAN ACCIONES CON TODAS LAS PALABRAS: --------------------------------------------------
                 //Contar las palabras que aparecen en el archivo (todas), mostrarlas ordenadas por la cantidad de apariciones
                 case "-a":
+                    OtrasFunciones.imprimirEnOrdenNumerico(palabraArr);
                     break;
                 //Contar las palabras que aparecen en el archivo (todas), mostrarlas ordenadas alfabéticamente
                 case "-A":

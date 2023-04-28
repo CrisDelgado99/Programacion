@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import funcionesPalabras.FuncionesBusqueda;
+import funcionesPalabras.OtrasFunciones;
 import funcionesPalabras.FuncTratamientoFicheros;
 
 
@@ -40,8 +41,9 @@ public class Palabras{
         contador = 0;
 
 
-        //Creamos la arrayList principal
+        //Creamos la arrayList principal y la arraylist para contener los indices en los que están los \n
         ArrayList<String> partes = new ArrayList<>();
+        ArrayList<Integer> indiceN = new ArrayList<>(); 
 
         //Buscamos primero el nombre del fichero, para que el programa sepa sobre qué fichero ha de actuar 
         for(int i = 0; i < args.length; i++){
@@ -57,9 +59,10 @@ public class Palabras{
             if(args[++posicionF] != null){
                 nombreFichero = args[posicionF++];
                 partes = FuncTratamientoFicheros.leerFicheroCompleto(nombreFichero);
+                indiceN = OtrasFunciones.buscarIndiceN(partes);
                 ficheroCompletoGuardado = FuncTratamientoFicheros.guardarFichero(partes);
                 ficheroBackUp = ficheroCompletoGuardado;
-                System.out.println("El archivo seleccionado es el siguiente: ");
+                System.out.println("El archivo seleccionado es el siguiente: \n");
                 System.out.println(ficheroCompletoGuardado + "\n");
             } else {
                 
@@ -139,6 +142,8 @@ public class Palabras{
                 //ARGS RELACIONADOS CON ARCHIVOS: -----------------------------------------------------------------------
                 //Restaura el archivo
                 case "-o":
+                    ficheroCompletoGuardado = ficheroBackUp;
+                    break;
                 //Lee lo que se encuentra en el archivo y lo escribe en otro archivo cuyo nombre está al lado de -w
                 case "-w":
             }

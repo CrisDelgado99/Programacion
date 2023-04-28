@@ -1,0 +1,46 @@
+CDs{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16pt;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(corazones.jpg);
+}
+
+CD{
+    margin: 20px;
+    padding: 30px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: azure;
+    border: solid 2px lightskyblue ;
+    border-radius: 25px;
+}
+
+titulo{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40pt;
+    color: pink;
+    text-decoration: dashed underline;
+    padding-bottom: 10px;
+}
+
+artista{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25pt;
+}
+
+rating{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: lightblue;
+    font-size: 30px;
+    padding: 15px;
+    background-color: beige;
+    border: solid 2px lightblue;
+    margin: 20px;
+}
+
+
+

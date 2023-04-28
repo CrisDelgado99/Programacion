@@ -8,6 +8,7 @@ public class Palabras {
     public Palabras(String palabra, int indice){
         this.palabra = palabra;
         this.posicion = indice + 1;
+        this.cantidad = 1;
     }
 
     //getters

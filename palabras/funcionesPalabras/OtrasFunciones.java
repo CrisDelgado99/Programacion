@@ -17,6 +17,18 @@ public class OtrasFunciones {
         return indiceN;
     }
 
+    public static ArrayList<Integer> buscarIndice(ArrayList<String> partes, String palabra){
+        ArrayList<Integer> indice = new ArrayList<>();
+
+        for(int i = 0; i < partes.size(); i++){
+            if(partes.get(i).contains(palabra)){
+                indice.add(i);
+            }
+        }
+
+        return indice;
+    }
+
     public static ArrayList<String> buscarNoRepetidas(ArrayList<String> partes){
         ArrayList<String> palabrasNoRep = new ArrayList<>();
         for(String p: partes){
@@ -34,19 +46,6 @@ public class OtrasFunciones {
             palabraArr.add(new PalabraText(p, FuncionesBusqueda.posicionPalabra(p, partes), FuncionesBusqueda.lineaPalabra(p, partes), FuncionesBusqueda.contadorPalabra(partes, p)));
         }
         return palabraArr;
-    }
-
-    public static void imprimirEnOrdenNumerico(ArrayList<PalabraText> palabraArr){
-        for(int i = 1000; i > 0; i--){
-            for(PalabraText pal: palabraArr)
-            if(pal.getCantidad() == i && pal.getPalabra().matches("^[^A-Z]*$") && !pal.getPalabra().equals("")){
-                if(pal.getCantidad() == 1){
-                    System.out.println(pal.getPalabra() + ": " + pal.getCantidad() + " vez.");
-                } else {
-                    System.out.println(pal.getPalabra() + ": " + pal.getCantidad() + " veces.");
-                }
-            }
-        }
     }
 }
 

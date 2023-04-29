@@ -20,6 +20,9 @@ public class Palabras{
         String palabra;
         palabra = "";
 
+        String palabraBorrar;
+        palabraBorrar = "";
+
         String ficheroCompletoGuardado;
         ficheroCompletoGuardado = "";
 
@@ -28,6 +31,9 @@ public class Palabras{
 
         boolean fEsta;
         fEsta = false;
+
+        boolean nEsta;
+        nEsta = false;
 
         int posicionF;
         posicionF = 0;
@@ -41,11 +47,15 @@ public class Palabras{
         int contador;
         contador = 0;
 
+        int n;
+        n = 0;
+
 
         //Creamos la arrayList principal y la arraylist para contener los indices en los que están los \n
         ArrayList<String> partes = new ArrayList<>();
         ArrayList<String> palabrasNoRep = new ArrayList<>();
         ArrayList<Integer> indiceN = new ArrayList<>(); 
+        ArrayList<Integer> indice = new ArrayList<>(); 
         ArrayList<PalabraText> palabraArr = new ArrayList<>();
 
         //Buscamos primero el nombre del fichero, para que el programa sepa sobre qué fichero ha de actuar 
@@ -113,12 +123,14 @@ public class Palabras{
                 //ARGS QUE REALIZAN ACCIONES CON TODAS LAS PALABRAS: --------------------------------------------------
                 //Contar las palabras que aparecen en el archivo (todas), mostrarlas ordenadas por la cantidad de apariciones
                 case "-a":
-                    OtrasFunciones.imprimirEnOrdenNumerico(palabraArr);
+                    System.out.println("Estas son todas las palabras del fichero ordenadas por cantidad de apariciones:");
+                    FuncionesBusqueda.imprimirEnOrdenNumerico(palabraArr);
                     break;
                 //Contar las palabras que aparecen en el archivo (todas), mostrarlas ordenadas alfabéticamente
                 case "-A":
-                    break;
-
+                    System.out.println("Estas son todas las palabras del fichero ordenadas alfabéticamente:");
+                    FuncionesBusqueda.ordenarAlfabeticamente(palabrasNoRep, palabraArr);
+                    break;    
                 //ARGS DE ORDEN ALEATORIO DE PALABRAS: ------------------------------------------------------------------ 
                 //Ordena aleatoriamente las palabras de cada línea
                 case "-r":
@@ -130,17 +142,65 @@ public class Palabras{
                 //ARGS DE MAYÚSCULAS Y MINÚSCULAS
                 //Convierte todo el texto a minúscula
                 case "-m":
+                    ficheroCompletoGuardado = ficheroCompletoGuardado.toLowerCase();
+                    System.out.println("El texto se ha convertido a minúscula: \n" + ficheroCompletoGuardado);
                     break;
                 //Convierte todo el texto a mayúscula
                 case "-M":
+                    ficheroCompletoGuardado = ficheroCompletoGuardado.toUpperCase();
+                    System.out.println("El texto se ha convertido a mayúscula: \n" + ficheroCompletoGuardado);
                     break;
 
                 //ARGS DE BORRADO DE PALABRAS: ------------------------------------------------------------------------
                 //Borra la palabra que se encuentra al lado de -b
                 case "-b":
-                //Borra la aparición n de la palabra que se encuentra al lado de -b
-                //Borra todas las apariciones de la palabra que se encuentra al lado de -b
+                    palabraBorrar = args[++i];
+                
                     //Comprobar si hay -n
+                    for(int i2 = 0; i2 < args.length; i2++ ){
+                        if(args[i2].equals("-n")){
+                            nEsta = true;
+                            try{
+                                n = Integer.parseInt(args[++i]);
+                            } catch(ArithmeticException ae){
+                                System.out.println("Al lado de -n se tiene que escribir un número.");
+                                System.out.println(ae.getMessage());
+                            } catch(Exception e){
+                                System.out.println(e.getMessage());
+                            }
+                            
+                        }
+                    }
+
+                    if(nEsta){
+                        //Borra la aparición n de la palabra que se encuentra al lado de -b
+                        if (n < palabraArr.get(palabraArr.indexOf(palabraBorrar)).getCantidad()){
+                            indice = OtrasFunciones.buscarIndice(partes, palabraBorrar);
+                            for(Integer num: indice){
+                                System.out.println(num);
+                            }
+                            if(n != 0){
+                                partes.remove(indice.get(n-1));
+                            }
+                            
+                        } else {
+                            System.out.println("La palabra " + palabraBorrar + " no aparece tantas veces.");
+                        }
+                        
+                        
+                    } else {
+                        //Borra todas las apariciones de la palabra que se encuentra al lado de -b
+                        for(int i2 = 0; i2 < partes.size(); i2++){
+                            if(partes.get(i2).toLowerCase().contains(palabraBorrar.toLowerCase())){
+                                partes.remove(i2); //remove all solo me deja borrar utilizando un ArrayList
+                                i2--;
+                            }
+                        }
+
+                        ficheroCompletoGuardado = FuncTratamientoFicheros.guardarFichero(partes);
+                        System.out.println(ficheroCompletoGuardado);
+
+                    }
                     break;
 
                 //ARGS RELACIONADOS CON ARCHIVOS: -----------------------------------------------------------------------

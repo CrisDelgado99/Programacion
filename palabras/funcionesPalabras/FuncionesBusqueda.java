@@ -1,6 +1,9 @@
 package funcionesPalabras;
 
 import java.util.ArrayList;
+import java.util.Collections;
+
+import clasePalabras.PalabraText;
 
 public class FuncionesBusqueda {
     public static int contadorPalabra(ArrayList<String> partes, String palabra){
@@ -46,5 +49,31 @@ public class FuncionesBusqueda {
             }
         }
         return -1;
+    }
+
+    public static void imprimirEnOrdenNumerico(ArrayList<PalabraText> palabraArr){
+        for(int i = PalabraText.getMayorCantidad(); i > 0; i--){
+            for(PalabraText pal: palabraArr)
+            if(pal.getCantidad() == i && pal.getPalabra().matches("^[^A-Z]*$") && !pal.getPalabra().equals("")){
+                if(pal.getCantidad() == 1){
+                    System.out.println(pal.getPalabra() + ": " + pal.getCantidad() + " vez.");
+                } else {
+                    System.out.println(pal.getPalabra() + ": " + pal.getCantidad() + " veces.");
+                }
+            }
+        }
+    }
+
+    public static void ordenarAlfabeticamente(ArrayList<String> palabrasNoRep, ArrayList<PalabraText> palabraArr){
+        Collections.sort(palabrasNoRep);
+
+        for(String p: palabrasNoRep){
+            for(PalabraText pal: palabraArr){
+                if(p.equals(pal.getPalabra()) && !p.equals("")){
+                    System.out.println(p + ": " + pal.getCantidad());
+                }
+            }
+            
+        }
     }
 }

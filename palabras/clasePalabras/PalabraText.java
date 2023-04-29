@@ -1,6 +1,7 @@
 package clasePalabras;
 
 public class PalabraText {
+    private static int mayorCantidad = 0;
     private String palabra;
     private int cantidad;
     private int posicion;
@@ -11,6 +12,9 @@ public class PalabraText {
         this.posicion = posicion;
         this.cantidad = cantidad;
         this.linea = linea;
+        if(this.cantidad > mayorCantidad){
+            mayorCantidad = this.cantidad;
+        }
     }
 
     //getters
@@ -28,6 +32,10 @@ public class PalabraText {
 
     public int getLinea(){
         return this.linea;
+    }
+
+    public static int getMayorCantidad(){
+        return mayorCantidad;
     }
 
 

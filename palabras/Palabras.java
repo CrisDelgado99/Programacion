@@ -150,6 +150,8 @@ public class Palabras{
                     break;
                 //Lee lo que se encuentra en el archivo y lo escribe en otro archivo cuyo nombre está al lado de -w
                 case "-w":
+                
+                    break;
             }
         }
 

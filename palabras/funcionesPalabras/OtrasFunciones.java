@@ -21,7 +21,7 @@ public class OtrasFunciones {
         ArrayList<String> palabrasNoRep = new ArrayList<>();
         for(String p: partes){
             if(!palabrasNoRep.contains(p.toLowerCase()) && !p.contains("\n")){
-                palabrasNoRep.add(p);
+                palabrasNoRep.add(p.toLowerCase());
             }
         }
         return palabrasNoRep;
@@ -39,7 +39,7 @@ public class OtrasFunciones {
     public static void imprimirEnOrdenNumerico(ArrayList<PalabraText> palabraArr){
         for(int i = 1000; i > 0; i--){
             for(PalabraText pal: palabraArr)
-            if(pal.getCantidad() == i){
+            if(pal.getCantidad() == i && pal.getPalabra().matches("^[^A-Z]*$") && !pal.getPalabra().equals("")){
                 if(pal.getCantidad() == 1){
                     System.out.println(pal.getPalabra() + ": " + pal.getCantidad() + " vez.");
                 } else {

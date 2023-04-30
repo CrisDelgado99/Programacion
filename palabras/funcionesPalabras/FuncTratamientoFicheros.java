@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * FuncTratamientoFicheros.java
  * En esta clase, creamos las funciones y los procedimientos necesarios para leer de ficheros y escribir en ellos.
  * @author Cristina Delgado Muñoz
+ * @CrisDelgado99
  */
 public class FuncTratamientoFicheros {
 
@@ -53,6 +54,14 @@ public class FuncTratamientoFicheros {
         
     }
 
+    /*
+     * Esta función toma un arrayList tipo String y guarda su contenido en una variable tipo String,
+     * creando un espaciado junto a las palabras y no haciéndolo si el String seleccionado se trata
+     * de un salto de línea
+     * @param ArrayList<String> partes
+     * @return String 
+     */
+
     public static String guardarFichero(ArrayList<String> partes){
         String ficheroGuardado = "";
 
@@ -66,6 +75,12 @@ public class FuncTratamientoFicheros {
 
         return ficheroGuardado;
     }
+
+    /*
+     * Esta función toma una variable tipo String y la escribe en un fichero
+     * @param String nombreFichero
+     * @param String textoCompleto (Lo que se escribirá en el fichero)
+     */
 
     public static void escribirEnFichero(String nombreFichero, String textoCompleto){
         try{

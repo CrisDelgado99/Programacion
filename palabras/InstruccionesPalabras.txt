@@ -1,0 +1,94 @@
+Si estás leyendo esto, significa que quieres utilizar el programa Palabras.
+Es importante tener en cuenta que, al final de este archivo, hay notas sobre la entrega de este trabajo
+Para utilizarlo, escribe en la línea de comandos:
+"java Palabras" seguido de:
+    //Especificar ficheros con los que trabajar---------------------------------------------------------
+    -f nombreFichero.txt  
+        Sirve para decir qué fichero quieres que el programa utilice para hacer búsquedas o cambios.
+        ¡Es obligatorio para poder usar el programa, no lo olvides!
+
+    -w nombreFicheroRecibidor.txt
+        Sirve para decir en qué fichero quieres escribir lo que hay en el fichero -f (o el resultado de los cambios)
+        Ej: java Palabras -f nombreFichero.txt -r -m -w nombreFicheroRecibidor.txt
+        Escribe en el fichero -w lo que había en el fichero -f, pero en minúscula y con las palabras de las líneas desordenadas
+
+    //Especificar palabras que se quieren buscar y lo que se quiere saber de ellas (contador, línea o posición)----------------------
+    -c palabraQueQuieresBuscar
+        Sirve para buscar si existe una palabra en el fichero, y si es así, contar cuántas veces aparece
+        Ej: java Palabras -f nombreFichero.txt -c java
+        Busca la palabra "java" y dice cuántas veces aparece.
+
+    -p palabraQueQuieresBuscar
+        Sirve para buscar si existe una palabra en el fichero, y si es así, decir en qué posición aparece por primera vez
+        Ej: java Palabras -f nombreFichero.txt -p java
+        Busca la palabra "java" y dice en qué posición aparece por primera vez.
+
+    -l palabraQueQuieresBuscar
+        Sirve para buscar si existe una palabra en el fichero, y si es así, decir en qué posición aparece por primera vez
+        Ej: java Palabras -f nombreFichero.txt -p java
+        Busca la palabra "java" y dice en qué posición aparece por primera vez.
+
+    //Ordenar las palabras del texto completo, diciendo cuántas veces aparecen:
+    -a 
+        Sirve para ordenar todas las palabras del texto por cantidad de apariciones
+        Ej: java Palabras -f nombreFichero.txt -a
+
+    -a
+        Sirve para ordenar todas las palabras del texto alfabéticamente
+        Ej: java Palabras -f nombreFichero.txt -A
+
+    //Modificar el contenido del fichero. Orden de palabras: --------------------------------------------------
+    -r 
+        Desordena las palabras de cada línea
+        Ej: java Palabras -f nombreFichero.txt -r 
+    
+    -R 
+        Desordena las palabras del fichero completo
+        Ej: java Palabras -f nombreFichero.txt -R
+
+    -R1
+        Forma alternativa de desordenar palabras del fichero. Fue mi primer intento 
+        y lo he añadido para mostrar el proceso de aprendizaje durante el ejercicio
+        Ej: java Palabras -f nombreFichero.txt -R1
+
+    //Modificar el contenido del fichero. borrar palabras: ------------------------------------------------
+    -b palabraQueQuieresBorrar
+        Si no va acompañado de -n, borra todas las apariciones de la palabra
+        Ej: java Palabras -f nombreFichero.txt -b java 
+        Borra todas las apariciones de la palabra "java"
+
+    -b palabraQueQuieresBorrar -n numDeAparición
+        Borra el número de aparición decidido por el usuario de la palabra espeficicada
+        Ej: java Palabras -f nombreFichero.txt -b java -n 2
+        Borra la segunda aparición de la palabra "java"
+
+    //Otros--------------------------------------------------------------------------------------------
+    -o
+        Devuelve el contenido del archivo a su estado original antes de los cambios
+        Ej: java Palabras -f nombreFichero.txt -r -R -b java -o
+        Devuelve el contenido archivo a su estado original, deshaciendo los cambios de borrado de palabras y de orden.
+
+    Es posible utilizar tantos comandos como se quiera en este archivo, incluso usarlos todos.
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    IMPORTANTE:
+    Notas sobre la entrega de este trabajo:
+        -He querido añadir -R1 ya que muestra mi progreso durante la creación de este programa
+
+        -Finalmente, Luis y yo hemos decidido entregar por separado este trabajo, por lo que supongo que él se pondrá en contacto contigo
+        para decidir lo que habrá de entregar. Esto se ha debido a una falta de tiempo por parte de Luis.
+
+        -En ciertas ocasiones, he decidido utilizar for normales en lugar de foreach para facilitar y hacer posible el borrado de elementos
+        de un ArrayList. 
+
+        -Además de las instrucciones (Este fichero), Tema11intro.txt y el fichero sobre el que he estado copiando la información,
+        he añadido un fichero en inglés que he creado para probar este programa. Las ventajas que tiene son:
+
+            -No tiene tildes, lo que me ha ayudado bastante debido a que no he sido capaz de solucionar un problema con mi compilador que
+            hace imposible el uso de UTF-8.
+
+            -Tiene varias palabras seguidas varias veces, lo que me ha ayudado a comprobar si las palabras se borraban de forma adecuada
+
+            -Tiene las palabras "soy Cris" seguidas varias veces, lo que me ha hecho posible comprobar si las palabras se borraban de forma
+            adecuada una vez solucionado un problema anterior (En las líneas que tenían la misma palabra múltiples veces, solo se borraban
+            la mitad de veces, cosa que solucioné decrementando i tras borrar elementos del ArrayList utilizado)

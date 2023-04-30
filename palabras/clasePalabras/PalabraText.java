@@ -1,17 +1,23 @@
 package clasePalabras;
 
+/*
+ * PalabraText.java
+ * Esta clase instancia objetos a partir de las palabras que hay en un texto y la cantidad de veces que aparecen
+ * @author Cristina Delgado Muñoz
+ * @CrisDelgado99
+ */
 public class PalabraText {
+    //Atributo de clase
     private static int mayorCantidad = 0;
+
+    //Atributos de instancia
     private String palabra;
     private int cantidad;
-    private int posicion;
-    private int linea;
 
-    public PalabraText(String palabra, int posicion, int linea, int cantidad){
+    //Constructor
+    public PalabraText(String palabra, int cantidad){
         this.palabra = palabra;
-        this.posicion = posicion;
         this.cantidad = cantidad;
-        this.linea = linea;
         if(this.cantidad > mayorCantidad){
             mayorCantidad = this.cantidad;
         }
@@ -22,37 +28,24 @@ public class PalabraText {
         return this.palabra;
     }
 
-    public int getPosicion(){
-        return this.posicion;
-    }
-
     public int getCantidad(){
         return this.cantidad;
-    }
-
-    public int getLinea(){
-        return this.linea;
     }
 
     public static int getMayorCantidad(){
         return mayorCantidad;
     }
 
-
     //setters
     public void setPalabra(String p){
         this.palabra = p;
     }
 
-    public void setPosicion(int posicion){
-        this.posicion = posicion;
+    public void setCantidad(int c){
+        this.cantidad = c;
     }
 
-    public void setCantidad(){
-        this.cantidad = this.cantidad + 1;
-    }
-
-    public void setLinea(int linea){
-        this.linea = linea;
+    public void setMayorCantidad(int mc){
+        mayorCantidad = mc;
     }
 }

@@ -2,8 +2,20 @@ package funcionesPalabras;
 
 import java.util.ArrayList;
 
+/*
+ * FuncOrdenRandom.java
+ * Esta clase contiene funciones que ordenan de forma aleatoria líneas o textos completos
+ * @author Cristina Delgado Muñoz
+ * @CrisDelgado99
+ */
 public class FuncOrdenRandom {
-    //Esta función no está en uso, pero es la primera versión y, si quieres probarla, puedes hacerlo con el comando -R1
+    /*
+     * Esta función ordena de forma aleatoria las palabras de un texto completo
+     * @param ArrayList<String> partes
+     * @param ArrayList<int> indiceN
+     * @return ArrayList<String>
+     */
+    //Esta función no es la definitiva, pero es la primera versión y, si quieres probarla, puedes hacerlo con el comando -R1
     public static ArrayList<String> ordenRandomTextCompl(ArrayList<String> partes, ArrayList<Integer> indiceN){
         ArrayList<String> partesDesorden = new ArrayList<>();
 
@@ -31,6 +43,12 @@ public class FuncOrdenRandom {
         return partesDesorden;
     }
 
+    /*
+     * Esta función ordena de forma aleatoria las palabras de un texto completo (Segunda versión de la anterior)
+     * @param String ficheroCompleto
+     * @param ArrayList<int> indiceN
+     * @return String
+     */
     public static String ordenRandomTextComplMejorada(String ficheroCompleto, ArrayList<Integer> indiceN){
         String textoDesordenado = "";
         String [] palabras = ficheroCompleto.split(" ");
@@ -62,6 +80,11 @@ public class FuncOrdenRandom {
         return textoDesordenado;
     }
 
+    /*
+     * Esta función devuelve cada un ArrayList en forma de String (Sin saltos de línea)
+     * @param ArrayList<String> linea
+     * @return String
+     */
     public static String devolverArrayListEnString(ArrayList<String> linea){
         String lineaSt = "";
         for(String lin: linea){
@@ -71,6 +94,11 @@ public class FuncOrdenRandom {
         return lineaSt;
     }
 
+    /*
+     * Esta función ordena de forma aleatoria las palabras de cada línea de un texto
+     * @param String textoGuardado
+     * @return String
+     */
     public static String ordenRandomLineas(String textoGuardado){
         String textoDesordenLinea = "";
         ArrayList<String> linea = new ArrayList<>();

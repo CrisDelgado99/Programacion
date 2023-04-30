@@ -1,0 +1,32 @@
+11. Ficheros de texto y paso de parámetros por línea de comandos
+
+Mediante un programa en Java se puede acceder al contenido de un fichero grabado
+en un dispositivo de almacenamiento (por ejemplo en el disco duro) tanto para leer
+como para escribir (grabar) datos.
+La información contenida en las variables, los arrays, los objetos o cualquier otra
+estructura de datos es volátil, es decir, se pierde cuando se cierra el programa.
+Los ficheros permiten tener ciertos datos almacenados y disponibles en cualquier
+momento para cuando nuestro programa los necesite.
+Pensemos por ejemplo en un juego. Podríamos utilizar un fichero para guardar el
+ranking de jugadores con las mejores puntuaciones. De esta manera, estos datos no
+se perderían al salir del juego. De igual forma, en un programa de gestión, puede ser
+útil tener un fichero de configuración con datos como el número máximo de elementos
+que se muestran en un listado o los distintos tipos de IVA aplicables a las facturas. Al
+modificar esta información, quedará almacenada en el fichero correspondiente y no
+se perderá cuando se cierre el programa.
+Cuando un programa se cierra, se pierde la información almacenada en
+variables, arrays, objetos o cualquier otra estructura. Si queremos conservar
+ciertos datos, debemos guardarlos en ficheros.
+Hay programas que hacen un uso intensivo de datos. Por ejemplo, la aplicación
+Séneca - que, por cierto, está hecha en Java - lleva el control de la matriculación
+de cientos de miles de alumnos y la gestión de decenas de miles de profesores. En
+este caso y en otros similares se utiliza un sistema gestor de bases de datos. El acceso
+a bases de datos mediante Java lo estudiaremos en el capítulo 13.
+La creación y uso de ficheros desde un programa en Java se lleva a cabo cuando
+hay poca información que almacenar o cuando esa información es heterogénea.
+En los casos en que la información es abundante y homogénea es preferible
+usar una base de datos relacional (por ejemplo MySQL) en lugar de ficheros.
+En este capítulo estudiaremos, además del acceso a ficheros desde un programa en
+Java, el paso de parámetros desde la línea de comandos. Son cosas diferentes y no
+hay que utilizarlas juntas necesariamente pero, como podrás comprobar, se combinan
+muy bien, por eso hemos incluido estos dos recursos de Java en un mismo capítulo.

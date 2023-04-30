@@ -1,8 +1,10 @@
 package funcionesPalabras;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -63,6 +65,19 @@ public class FuncTratamientoFicheros {
         }
 
         return ficheroGuardado;
+    }
+
+    public static void escribirEnFichero(String nombreFichero, String textoCompleto){
+        try{
+            BufferedWriter bw = new BufferedWriter(new FileWriter(nombreFichero));
+            bw.write(textoCompleto);
+            bw.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: " + e.getMessage());
+        } catch(IOException e){
+            System.out.println("Error: " + e.getMessage());
+        }
+        
     }
 
 }

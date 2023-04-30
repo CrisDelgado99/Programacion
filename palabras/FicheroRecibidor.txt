@@ -1,0 +1,32 @@
+11. ficheros de texto y paso de parã¡metros por lã­nea de comandos 
+ 
+mediante un programa en java se puede acceder al contenido de un fichero grabado 
+en un dispositivo de almacenamiento (por ejemplo en el disco duro) tanto para leer 
+como para escribir (grabar) datos. 
+la informaciã³n contenida en las variables, los arrays, los objetos o cualquier otra 
+estructura de datos es volã¡til, es decir, se pierde cuando se cierra el programa. 
+los ficheros permiten tener ciertos datos almacenados y disponibles en cualquier 
+momento para cuando nuestro programa los necesite. 
+pensemos por ejemplo en un juego. podrã­amos utilizar un fichero para guardar el 
+ranking de jugadores con las mejores puntuaciones. de esta manera, estos datos no 
+se perderã­an al salir del juego. de igual forma, en un programa de gestiã³n, puede ser 
+ãºtil tener un fichero de configuraciã³n con datos como el nãºmero mã¡ximo de elementos 
+que se muestran en un listado o los distintos tipos de iva aplicables a las facturas. al 
+modificar esta informaciã³n, quedarã¡ almacenada en el fichero correspondiente y no 
+se perderã¡ cuando se cierre el programa. 
+cuando un programa se cierra, se pierde la informaciã³n almacenada en 
+variables, arrays, objetos o cualquier otra estructura. si queremos conservar 
+ciertos datos, debemos guardarlos en ficheros. 
+hay programas que hacen un uso intensivo de datos. por ejemplo, la aplicaciã³n 
+sã©neca - que, por cierto, estã¡ hecha en java - lleva el control de la matriculaciã³n 
+de cientos de miles de alumnos y la gestiã³n de decenas de miles de profesores. en 
+este caso y en otros similares se utiliza un sistema gestor de bases de datos. el acceso 
+a bases de datos mediante java lo estudiaremos en el capã­tulo 13. 
+la creaciã³n y uso de ficheros desde un programa en java se lleva a cabo cuando 
+hay poca informaciã³n que almacenar o cuando esa informaciã³n es heterogã©nea. 
+en los casos en que la informaciã³n es abundante y homogã©nea es preferible 
+usar una base de datos relacional (por ejemplo mysql) en lugar de ficheros. 
+en este capã­tulo estudiaremos, ademã¡s del acceso a ficheros desde un programa en 
+java, el paso de parã¡metros desde la lã­nea de comandos. son cosas diferentes y no 
+hay que utilizarlas juntas necesariamente pero, como podrã¡s comprobar, se combinan 
+muy bien, por eso hemos incluido estos dos recursos de java en un mismo capã­tulo. 

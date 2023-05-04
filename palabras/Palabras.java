@@ -189,13 +189,17 @@ public class Palabras {
                 // Ordena aleatoriamente las palabras de cada línea
                 case "-r":
                     ficheroCompletoGuardado = FuncOrdenRandom.ordenRandomLineas(ficheroCompletoGuardado);
-                    System.out.println("\nEl fichero con orden aleatorio de palabras en cada línea es el siguiente: \n"
-                            + ficheroCompletoGuardado);
+                    partes.clear();
+                    partes = OtrasFunciones.crearArrayListStringDeVarString(ficheroCompletoGuardado);
+                    System.out.println("\nEl fichero con orden aleatorio de palabras en cada línea es el siguiente: \n"+ ficheroCompletoGuardado);
+                    
                     break;
                 // Ordena aleatoriamente todas las palabras del fichero
                 case "-R":
                     ficheroCompletoGuardado = FuncOrdenRandom.ordenRandomTextComplMejorada(ficheroCompletoGuardado, indiceN);
                     System.out.println("\nEl fichero con orden aleatorio es el siguiente:\n" + ficheroCompletoGuardado);
+                    partes.clear();
+                    partes = OtrasFunciones.crearArrayListStringDeVarString(ficheroCompletoGuardado);
                     break;
                 // Primera versión de ordenar aleatoriamente las palabras del fichero
                 case "-R1":
@@ -208,12 +212,17 @@ public class Palabras {
                 // Convierte todo el texto a minúscula
                 case "-m":
                     ficheroCompletoGuardado = ficheroCompletoGuardado.toLowerCase();
+                    partes.clear();
+                    partes = OtrasFunciones.crearArrayListStringDeVarString(ficheroCompletoGuardado);
+
                     System.out.println("El texto se ha convertido a minúscula: \n" + ficheroCompletoGuardado);
                     break;
                 // Convierte todo el texto a mayúscula
                 case "-M":
                     ficheroCompletoGuardado = ficheroCompletoGuardado.toUpperCase();
                     System.out.println("El texto se ha convertido a mayúscula: \n" + ficheroCompletoGuardado);
+                    partes.clear();
+                    partes = OtrasFunciones.crearArrayListStringDeVarString(ficheroCompletoGuardado);
                     break;
 
                 // ARGS DE BORRADO DE PALABRAS:
@@ -262,6 +271,8 @@ public class Palabras {
                                     }
                                 ficheroCompletoGuardado = FuncTratamientoFicheros.guardarFichero(partes);
                                 System.out.println("\nEl fichero sin la aparicion " + n + " de la palabra " + palabraBorrar + " queda así:\n" + ficheroCompletoGuardado);
+                                partes.clear();
+                                partes = OtrasFunciones.crearArrayListStringDeVarString(ficheroCompletoGuardado);
                                 } else{
                                     System.out.println("La palabra que intentas borrar no aparece tantas veces");
                                 }
@@ -280,8 +291,9 @@ public class Palabras {
                             }
                             // Guardo los cambios en el String que guarda el fichero.
                             ficheroCompletoGuardado = FuncTratamientoFicheros.guardarFichero(partes);
-                            System.out.println("El fichero sin la palabra " + palabraBorrar + " queda así:\n"
-                                    + ficheroCompletoGuardado);
+                            System.out.println("El fichero sin la palabra " + palabraBorrar + " queda así:\n"+ ficheroCompletoGuardado);
+                            partes.clear();
+                            partes = OtrasFunciones.crearArrayListStringDeVarString(ficheroCompletoGuardado);
 
                         }
                     } else {
@@ -293,6 +305,8 @@ public class Palabras {
                 // Restaura el archivo
                 case "-o":
                     ficheroCompletoGuardado = ficheroBackUp;
+                    partes.clear();
+                    partes = OtrasFunciones.crearArrayListStringDeVarString(ficheroCompletoGuardado);
                     break;
                 // Lee lo que se encuentra en el archivo y lo escribe en otro archivo cuyo
                 // nombre está al lado de -w

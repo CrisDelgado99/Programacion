@@ -75,6 +75,22 @@ public class OtrasFunciones {
         }
         return palabraArr;
     }
+
+    public static ArrayList<String> crearArrayListStringDeVarString(String textoCompleto){
+        ArrayList<String> partes = new ArrayList<>();
+        String[] palabras;
+
+        String[] lineas = textoCompleto.split("\n");
+        for(String l: lineas){
+            l = l + "\n";
+            palabras = l.split(" ");
+            for(String p: palabras){
+                partes.add(p);
+            }
+        }
+        return partes;
+        
+    }
 }
 
 

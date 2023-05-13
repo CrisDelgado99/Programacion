@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ProbarExcepciones",
+            "request": "launch",
+            "mainClass": "ProbarExcepciones",
+            "projectName": "vsCodeGitHub_138a74ac"
+        },
+        {
+            "type": "java",
             "name": "Gestisimal",
             "request": "launch",
             "mainClass": "Gestisimal",

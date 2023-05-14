@@ -1,0 +1,104 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 13 may 2023, 19:40:32
+    Author     : rhiap
+*/
+
+@font-face{
+    font-family: 'Munro';
+    src: url('fonts/munro.ttf');
+}
+
+*{
+    font-family: 'Munro';
+}
+
+p{
+    font-family: 'Munro';
+}
+
+h1{
+    text-align: center;
+    font-size: 37pt;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+            
+.espPers{
+    background-image: url(imgs/fondoBeepBoop.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+}
+
+.espPers img{
+    height: 220px;
+    width: 220px;
+}
+
+.ayudaAlturaPersonaje{
+    height: 100%;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.ayudaAlturaBocadillo{
+    height: 100%;
+    display: flex;
+}
+
+.bocadilloCont{
+    background-size: 100% 100%;
+    height: 200px;
+    width: 200px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.bocadilloCont p{
+    text-align: center;
+    line-height: 0.0px;
+}
+
+#tablasPersonajes{
+    display: flex;
+    flex-direction: row;
+}
+
+#tablasPersonajes img{
+    height: 220px;
+    width: 220px;
+}
+
+td div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+td div input{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+button{
+    padding: 10px;
+    cursor: pointer;
+    
+}

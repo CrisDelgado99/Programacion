@@ -2,7 +2,8 @@
     "liveServer.settings.port": 5501,
     "java.project.sourcePaths": [
         "programacionJava/tema10",
+        "programacionJava/tarea14_2/probarExcepciones",
         "palabras",
-        "programacionJava/tarea14_2/probarExcepciones"
+        "programacionJava/tarea14_2/ejercicios1_2_3"
     ]
 }

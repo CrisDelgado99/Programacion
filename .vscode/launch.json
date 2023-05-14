@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MainFiguras",
+            "request": "launch",
+            "mainClass": "figuras.MainFiguras",
+            "projectName": "vsCodeGitHub_138a74ac"
+        },
+        {
+            "type": "java",
+            "name": "Gestisimal",
+            "request": "launch",
+            "mainClass": "gestisimal.Gestisimal",
+            "projectName": "vsCodeGitHub_138a74ac"
+        },
+        {
+            "type": "java",
+            "name": "Expocoches",
+            "request": "launch",
+            "mainClass": "Expocoches",
+            "projectName": "vsCodeGitHub_138a74ac"
+        },
+        {
+            "type": "java",
+            "name": "MainVehiculos",
+            "request": "launch",
+            "mainClass": "MainVehiculos",
+            "projectName": "vsCodeGitHub_138a74ac"
+        },
+        {
+            "type": "java",
             "name": "Ejercicio3",
             "request": "launch",
             "mainClass": "Ejercicio3",

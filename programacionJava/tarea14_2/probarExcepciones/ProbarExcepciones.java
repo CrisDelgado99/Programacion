@@ -56,7 +56,7 @@ public class ProbarExcepciones {
     }
 
     public static int comprobarOpcion(String numSt){
-        if(numSt.matches("[1-9]*")){
+        if(numSt.matches("[1-9]+") && numSt != null){
             return Integer.parseInt(numSt);
         } else {
             return -80;

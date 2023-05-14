@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class FuncionesExcepciones {
     
     public static int comprobarOpcion(String numSt){
-        if(numSt.matches("[1-9]*")){
+        if(numSt.matches("[1-9]+") && numSt != null){
             return Integer.parseInt(numSt);
         } else {
             return Integer.MIN_VALUE;
@@ -17,7 +17,7 @@ public class FuncionesExcepciones {
     }
 
     public static int comprobarGenero(String numSt){
-        if(numSt.matches("[1-2]")){
+        if(numSt.matches("[1-2]") && numSt != null){
             return Integer.parseInt(numSt);
         } else {
             return -40;

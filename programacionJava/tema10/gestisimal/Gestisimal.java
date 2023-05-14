@@ -1,8 +1,10 @@
+package gestisimal;
+
 import java.io.Console;
 import java.util.ArrayList;
 
-import bibliotecaDeFunciones.BibliotecaGeneral;
-import articulo.Articulo;
+import gestisimal.bibliotecaDeFunciones.BibliotecaGeneral;
+import gestisimal.articulo.Articulo;
 
 public class Gestisimal {
     public static void main(String[]args){

@@ -1,4 +1,4 @@
-package articulo;
+package gestisimal.articulo;
 
 public class Articulo {
     private String codigo;

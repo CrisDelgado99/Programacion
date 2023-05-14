@@ -40,7 +40,7 @@ public class FuncionesExcepciones {
     }
 
     public static void excepcionFileNotFound() throws FileNotFoundException{
-        File archivo = new File("hola.txt");
+        File archivo = new File("hooola.txt");
         Scanner sc = new Scanner(archivo);    
         
     }

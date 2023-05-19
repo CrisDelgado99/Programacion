@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script>
+        var dias = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"];
+        document.write("<h2>Días de la semana</h2>");
+
+        do{
+            dato = window.prompt("Introduce un número del 1 al 7", "0");
+            num = parseInt(dato);
+        } while(num < 1 || num > 7);
+
+        document.write(`<p>El día introducido es: ${dias[num-1]}</p>`)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

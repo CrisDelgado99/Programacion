@@ -57,11 +57,17 @@ public class ProbarExcepciones {
     }
 
     public static int comprobarOpcion(String numSt){
-        if(numSt.matches("[1-9]+") && numSt != null){
-            return Integer.parseInt(numSt);
-        } else {
-            return -80;
+        int num = 0;
+        try{
+            num = Integer.parseInt(numSt);
+        } catch (NumberFormatException nfe){
+            System.out.println("Error: " + nfe.getClass().getName() + " ==> " + nfe.getMessage());
+            num = Integer.MIN_VALUE;
+        } catch (Exception e){
+            System.out.println("Error: " + e.getClass().getName() + " ==> " + e.getMessage());
+            num = Integer.MIN_VALUE;
         }
+        return num;
     }
 
     public static void excepcionStackOverFlow() throws StackOverflowError{

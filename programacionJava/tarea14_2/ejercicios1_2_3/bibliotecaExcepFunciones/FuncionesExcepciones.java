@@ -9,53 +9,48 @@ import java.util.Scanner;
 public class FuncionesExcepciones {
     
     public static int comprobarOpcion(String numSt){
-        if(numSt.matches("[1-9]+") && numSt != null){
-            return Integer.parseInt(numSt);
-        } else {
-            return Integer.MIN_VALUE;
+        int num = 0;
+        try{
+            num = Integer.parseInt(numSt);
+        } catch (NumberFormatException nfe){
+            System.out.println("Error: " + nfe.getClass().getName() + " ==> " + nfe.getMessage());
+            num = Integer.MIN_VALUE;
+        } catch (Exception e){
+            System.out.println("Error: " + e.getClass().getName() + " ==> " + e.getMessage());
+            num = Integer.MIN_VALUE;
         }
+        return num;
     }
 
     public static int comprobarGenero(String numSt){
         if(numSt.matches("[1-2]") && numSt != null){
             return Integer.parseInt(numSt);
         } else {
-            return -40;
+            return Integer.MIN_VALUE;
         }
     }
 
     public static void excepcionStackOverFlow() throws StackOverflowError{
-        excepcionStackOverFlow();
+        throw new StackOverflowError();
     }
 
     public static void excepcionNumberFormat() throws NumberFormatException{
-        Integer.parseInt("error");
+        throw new NumberFormatException();
     }
 
     public static void excepcionArrayOutOfIndex() throws ArrayIndexOutOfBoundsException{
-        int[] num = new int[4]; 
-        for(int i = 0; i <= 4; i++){
-            num[i] = 1;
-        }
+        throw new ArrayIndexOutOfBoundsException();
     }
 
     public static void excepcionFileNotFound() throws FileNotFoundException{
-        File archivo = new File("hooola.txt");
-        Scanner sc = new Scanner(archivo);    
-        
+        throw new FileNotFoundException(); 
     }
 
     public static void excepcionArithmetic() throws ArithmeticException{
-        int num;
-        num = 5/0;
+        throw new ArithmeticException();
     }
 
     public static void excepcionIO() throws IOException{
-        File archivo = new File("hola.txt");
-        archivo.createNewFile();
-        archivo.delete();
-        FileWriter writer = new FileWriter(archivo);  
-        writer.write("Hola");
-        writer.close();
+        throw new IOException();
     }
 }

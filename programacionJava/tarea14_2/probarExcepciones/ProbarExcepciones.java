@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class ProbarExcepciones {
@@ -64,28 +65,26 @@ public class ProbarExcepciones {
     }
 
     public static void excepcionStackOverFlow() throws StackOverflowError{
-        excepcionStackOverFlow();
+        throw new StackOverflowError();
     }
 
     public static void excepcionNumberFormat() throws NumberFormatException{
-        Integer.parseInt("error");
+        throw new NumberFormatException();
     }
 
     public static void excepcionArrayOutOfIndex() throws ArrayIndexOutOfBoundsException{
-        int[] num = new int[4]; 
-        for(int i = 0; i <= 4; i++){
-            num[i] = 1;
-        }
+        throw new ArrayIndexOutOfBoundsException();
     }
 
     public static void excepcionFileNotFound() throws FileNotFoundException{
-        File archivo = new File("hola.txt");
-        Scanner sc = new Scanner(archivo);    
-        
+        throw new FileNotFoundException(); 
     }
 
     public static void excepcionArithmetic() throws ArithmeticException{
-        int num;
-        num = 5/0;
+        throw new ArithmeticException();
+    }
+
+    public static void excepcionIO() throws IOException{
+        throw new IOException();
     }
 }

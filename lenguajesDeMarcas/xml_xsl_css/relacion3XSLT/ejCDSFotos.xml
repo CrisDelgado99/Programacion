@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="ejCDs.css" type="text/css"?>
-<?xml-stylesheet href="ejCDsLista.xsl" type="text/xsl"?>
+<?xml-stylesheet href="ejCDsFotos.xsl" type="text/xsl"?>
 <CDs>
     <CD>
-        <titulo>Circles</titulo>
+        <titulo foto="circles_macmiller.jpg">Circles</titulo>
         <artista  genero="masculino">Mac Miller</artista>
         <pais>EEUU</pais>
         <compania>REMember Music</compania>
@@ -14,7 +14,7 @@
     </CD>
 
     <CD>
-        <titulo>Discografía completa</titulo>
+        <titulo foto="babi.png">Discografía completa</titulo>
         <artista genero="femenino">Babi</artista>
         <pais>España</pais>
         <compania>Youtube</compania>
@@ -25,7 +25,7 @@
     </CD>
 
     <CD>
-        <titulo>The days</titulo>
+        <titulo foto="theDays.jpg">The days</titulo>
         <artista genero="masculino">Avicii</artista>
         <pais>Suecia</pais>
         <compania>Universal Music Group</compania>
@@ -36,7 +36,7 @@
     </CD>
 
     <CD>
-        <titulo>Happier than ever</titulo>
+        <titulo foto="happier.jpg">Happier than ever</titulo>
         <artista genero="femenino">Billie Eilish</artista>
         <pais>EEUU</pais>
         <compania>Universal Music Group</compania>
@@ -47,18 +47,7 @@
     </CD>
 
     <CD>
-        <titulo>Gaia</titulo>
-        <artista genero="mixto">Mägo de Oz</artista>
-        <pais>España</pais>
-        <compania>Locomotive Music</compania>
-        <precio>15€</precio>
-        <fecha_publicacion>2003</fecha_publicacion>
-        <genero>Rock celta</genero>
-        <rating>7.8/10</rating>
-    </CD>
-
-        <CD>
-        <titulo>Gaia</titulo>
+        <titulo foto="gaia.jpg">Gaia</titulo>
         <artista genero="mixto">Mägo de Oz</artista>
         <pais>España</pais>
         <compania>Locomotive Music</compania>
